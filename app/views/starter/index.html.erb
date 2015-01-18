@@ -6,10 +6,11 @@
     <hr/>
 
     <ul class="nav nav-pills" role="tablist">
-      <li role="presentation"><a href="#">所有主题</a></li>
+      <li role="presentation"><a href="/">所有主题</a></li>
+
       <% @topics.each do |t| %>
 
-          <li role="presentation"><a href="#"><%=t.subject%></a></li>
+          <li role="presentation"><%=link_to t.subject , topic_subject_path(t) %></li>
 
       <% end %>
     </ul>
@@ -33,9 +34,17 @@
 
                 <p><%=s.description%></p>
 
-                <%=link_to icon('heart', '很喜欢' , id: 'love_'+s.id.to_s , class: 'action-button') , like_subject_path(:subject => s) %>
+                <% if Like::Like.liking?(current_user, s) %>
+                  <%= link_to icon('heart', '取消赞' , id: 'love_'+s.id.to_s , class: 'action-button'), like_path_for(s), method: :delete %>
+                <% else %>
+                  <%= link_to icon('heart-o', '赞' , id: 'love_'+s.id.to_s , class: 'action-button'), like_path_for(s), method: :post %>
+                <% end %>
 
                 <%=link_to icon('comment-o', '参与' , id: 'love_'+s.id.to_s , class: 'action-button') , comment_subject_path(:subject => s) %>
+                <hr/>
+
+                <%=link_to icon('twitch', s.topic.subject , topic: s.topic , class: 'action-button') , topic_subject_path(:topic => s.topic) %>
+
 
             </div>
       </div>
@@ -79,6 +88,8 @@
                         $newElems.animate({ opacity: 1 });
                         $container.masonry( 'appended', $newElems, true );
                     });
+
+                    $('.photo-wall').shadow();
                 }
         );
     });

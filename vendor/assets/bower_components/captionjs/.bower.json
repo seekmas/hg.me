@@ -1,0 +1,14 @@
+{
+  "name": "captionjs",
+  "homepage": "https://github.com/ericmagnuson/captionjs",
+  "version": "0.9.8",
+  "_release": "0.9.8",
+  "_resolution": {
+    "type": "version",
+    "tag": "v0.9.8",
+    "commit": "c67a0e33fbc91043773b7e8242b1e59731c60070"
+  },
+  "_source": "https://github.com/ericmagnuson/captionjs.git",
+  "_target": "*",
+  "_originalSource": "https://github.com/ericmagnuson/captionjs.git"
+}

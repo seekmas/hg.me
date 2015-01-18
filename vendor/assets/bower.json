@@ -1,6 +1,8 @@
 {
   "name": "dsl-generated dependencies",
   "dependencies": {
-    "jQuery-Shadow": "https://github.com/sydlawrence/jQuery-Shadow.git"
+    "jQuery-Shadow": "https://github.com/sydlawrence/jQuery-Shadow.git",
+    "zAccordion": "https://github.com/natearmagost/zAccordion.git",
+    "captionjs": "https://github.com/ericmagnuson/captionjs.git"
   }
 }

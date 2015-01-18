@@ -20,10 +20,6 @@
     <%= f.text_area :description %>
   </div>
   <div class="field">
-    <%= f.label :user_id %><br>
-    <%= f.number_field :user_id %>
-  </div>
-  <div class="field">
     <%= f.label :topic_id %><br>
     <%= f.collection_select :topic_id , Topic.all , :id , :subject %>
   </div>

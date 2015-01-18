@@ -42,6 +42,7 @@ $jumbotron-bg: #ffffff;
 
 //Thumbnails
 $thumbnail-padding: 0px;
+$thumbnail-border-radius: 4px;
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
@@ -55,6 +56,8 @@ $thumbnail-padding: 0px;
 @import "font-awesome-sprockets";
 @import "font-awesome";
 @import "jQuery-Shadow/jquery.shadow/jquery.shadow";
+@import "nprogress";
+@import "nprogress-bootstrap";
 
 body {
   background: #DDDDDD;
@@ -68,10 +71,14 @@ a:hover {
   color: #ff4146;
 }
 
+hr {
+  margin-top: 5px;
+  margin-bottom: 5px;
+
+}
+
 .photo-wall {
-  border-bottom-width: 1px;
-  border-bottom-style: solid;
-  border-bottom-color: #000000;
+  margin-bottom: 10px;
 }
 
 .photo-muted {

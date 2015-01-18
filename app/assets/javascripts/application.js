@@ -25,4 +25,10 @@
 //= require masonry/jquery.infinitescroll.min
 //= require isotope/jquery.isotope
 //= require jQuery-Shadow/jquery.shadow/jquery.shadow.js
+//= require zAccordion/js/jquery.zaccordion.min
+//= require jquery.validate
+//= require jquery.validate.additional-methods
+//= require jquery.validate.localization/messages_zh
+//= require nprogress
+//= require nprogress-turbolinks
 //= require_tree .

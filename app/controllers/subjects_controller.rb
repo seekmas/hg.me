@@ -1,6 +1,6 @@
 class SubjectsController < ApplicationController
   before_action :set_subject, only: [:show, :edit, :update, :destroy]
-
+  before_action :authenticate_user! , only: [:show, :edit, :update, :destroy]
   # GET /subjects
   # GET /subjects.json
   def index
@@ -25,6 +25,7 @@ class SubjectsController < ApplicationController
   # POST /subjects.json
   def create
     @subject = Subject.new(subject_params)
+    @subject.user_id = current_user.id
 
     respond_to do |format|
       if @subject.save

@@ -27,6 +27,7 @@
       <ul class="nav navbar-nav">
         <li><a href="#">动态新闻</a></li>
         <li><a href="#">探索</a></li>
+        <li><%= link_to '上传', new_subject_path %></li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">排行 <span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
@@ -46,17 +47,21 @@
         </div>
       </form>
       <ul class="nav navbar-nav navbar-right">
+
+        <% if current_user %>
         <li><a href="#">主页</a></li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">个人信息 <span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
+            <li><%= link_to('修改密碼', edit_registration_path(:user)) %></li>
             <li class="divider"></li>
-            <li><a href="#">Separated link</a></li>
+            <li><%= link_to('退出', destroy_user_session_path, :method => :delete) %></li>
           </ul>
         </li>
+        <% else %>
+            <li><%= link_to('註冊', new_registration_path(:user)) %></li>
+            <li><%= link_to('登入', new_session_path(:user)) %></li>
+        <% end %>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
@@ -70,8 +75,11 @@
 
 
 <script>
-    $('.photo-shadow')
-            .shadow('raised');
+$(function(){
+    $('.photo-wall').shadow();
+    $('.photo-shadow').shadow('raised');
+});
+
 </script>
 
 

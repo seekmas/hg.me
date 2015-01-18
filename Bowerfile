@@ -1,1 +1,3 @@
 asset 'jQuery-Shadow' , 'https://github.com/sydlawrence/jQuery-Shadow.git'
+asset 'zAccordion' , 'https://github.com/natearmagost/zAccordion.git'
+asset 'captionjs' , 'https://github.com/ericmagnuson/captionjs.git'
