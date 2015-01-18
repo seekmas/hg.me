@@ -1,0 +1,89 @@
+//Scaffolding
+$body-bg: #F2F2F2;
+
+//Components
+$border-radius-base: 0px;
+$border-radius-large: 4px;
+
+//Typography
+$font-size-base: 14px;
+$font-family-base: 'comic sans ms';
+$headings-font-family: 'comic sans ms';
+
+//Grid system
+$grid-columns: 24;
+$grid-gutter-width: 16px;
+$container-desktop: (960px + $grid-gutter-width);
+$container-large-desktop: (1000px + $grid-gutter-width);
+
+//Forms
+$input-bg: #FF6666;
+$input-border: #FF6666;
+$input-border-radius: 3px;
+$input-color: #fff;
+$input-color-placeholder: #ffffff;
+$input-height-base: 28px;
+$input-height-large: 28px;
+$input-height-small: 28px;
+
+//Pills
+$nav-pills-border-radius: 6px;
+
+//button
+$btn-default-color: #000000;
+
+//navbar
+$navbar-default-border: #E2E2E2;
+$navbar-height: 40px;
+
+//jumbotron
+$jumbotron-padding: 6px;
+$jumbotron-bg: #ffffff;
+
+//Thumbnails
+$thumbnail-padding: 0px;
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "masonry/basic";
+@import "masonry/centered";
+@import "masonry/fluid";
+@import "masonry/gutters";
+@import "masonry/infinitescroll";
+@import "masonry/right-to-left";
+@import "masonry/transitions";
+@import "font-awesome-sprockets";
+@import "font-awesome";
+@import "jQuery-Shadow/jquery.shadow/jquery.shadow";
+
+body {
+  background: #DDDDDD;
+}
+
+a {
+  color: #ffa0a0;
+}
+
+a:hover {
+  color: #ff4146;
+}
+
+.photo-wall {
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: #000000;
+}
+
+.photo-muted {
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+}
+
+.action-button {
+  color: #ffa0a0;
+}
+
+.action-button:hover {
+  color: #ff4146;
+}

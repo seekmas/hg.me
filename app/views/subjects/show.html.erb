@@ -1,0 +1,38 @@
+
+
+
+<div class="row">
+
+  <div class="col-md-18">
+
+        <div class="panel"><div class="panel-body">
+
+        <div class="row">
+
+          <div class="col-md-6">
+
+            <p><%=@subject.description%></p>
+
+          </div>
+
+          <div class="col-md-18">
+            <%=image_tag @subject.photo.url(:large) , :class => 'photo-shadow' , :style => 'width: 100%;height:400px;' %>
+          </div>
+
+        </div>
+
+        </div></div>
+
+  </div>
+
+  <div class="col-md-6">
+
+    <div class="panel">
+
+
+    </div>
+
+  </div>
+
+
+</div>

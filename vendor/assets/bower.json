@@ -1,0 +1,6 @@
+{
+  "name": "dsl-generated dependencies",
+  "dependencies": {
+    "jQuery-Shadow": "https://github.com/sydlawrence/jQuery-Shadow.git"
+  }
+}

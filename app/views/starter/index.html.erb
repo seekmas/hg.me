@@ -1,0 +1,85 @@
+<div class="row">
+<div class="col-md-24">
+<div class="panel panel-default">
+  <div class="panel-body">
+    <h2 align="center">Explore posts in All Categories</h2>
+    <hr/>
+
+    <ul class="nav nav-pills" role="tablist">
+      <li role="presentation"><a href="#">所有主题</a></li>
+      <% @topics.each do |t| %>
+
+          <li role="presentation"><a href="#"><%=t.subject%></a></li>
+
+      <% end %>
+    </ul>
+
+  </div>
+</div>
+</div>
+</div>
+
+<div class="row transitions-enabled infinite-scroll" id="masonry-container">
+
+<% @subjects.each do |s| %>
+    <div class="col-md-6">
+      <div class="thumbnail">
+
+            <%=link_to image_tag(s.photo.url(:medium) , :border => 1 , :class => 'photo-wall' ) , { :action => :show , :controller => :subjects , :id => s.id } %>
+
+            <div class="photo-muted">
+
+                <small class="text-muted"><%=s.created_at%></small>
+
+                <p><%=s.description%></p>
+
+                <%=link_to icon('heart', '很喜欢' , id: 'love_'+s.id.to_s , class: 'action-button') , like_subject_path(:subject => s) %>
+
+                <%=link_to icon('comment-o', '参与' , id: 'love_'+s.id.to_s , class: 'action-button') , comment_subject_path(:subject => s) %>
+
+            </div>
+      </div>
+    </div>
+
+<% end %>
+
+</div>
+
+<div class="col-md-24">
+    <%= will_paginate(@subjects, :renderer => WillPaginate::ActionView::LinkRenderer) %>
+</div>
+
+<script>
+    $(function(){
+        var $container = $('#masonry-container');
+        $container.imagesLoaded(function(){
+            $container.masonry({
+                itemSelector: '.col-md-6'
+            });
+        });
+        $container.infinitescroll({
+                    navSelector  : '.pagination',    // selector for the paged navigation
+                    nextSelector : '.pagination a',  // selector for the NEXT link (to page 2)
+                    itemSelector : '.col-md-6',     // selector for all items you'll retrieve
+                    loading: {
+                        finishedMsg: '啦啦啦~啦啦啦~加载完了.',
+                        img: 'http://i.imgur.com/6RMhx.gif',
+                        msg: null,
+                        msgText: "小蜜正在努力的加载.",
+                        speed: 'slow'
+                    }
+                },
+                // trigger Masonry as a callback
+                function( newElements ) {
+                    // hide new items while they are loading
+                    var $newElems = $( newElements ).css({ opacity: 0 });
+                    // ensure that images load before adding to masonry layout
+                    $newElems.imagesLoaded(function(){
+                        // show elems now they're ready
+                        $newElems.animate({ opacity: 1 });
+                        $container.masonry( 'appended', $newElems, true );
+                    });
+                }
+        );
+    });
+</script>
